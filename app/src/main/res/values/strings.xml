@@ -1,0 +1,79 @@
+<resources>
+    <!--App labels-->
+    <string name="app_name" translatable="false">PComm</string>
+    <string name="app_title" translatable="false">Don\'t steal your friends anymore</string>
+
+    <!--Button labels-->
+    <string name="btn_login">Se connecter</string>
+    <string name="btn_signin">S\'enregistrer</string>
+    <string name="btn_quit">Quitter</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="btn_balance">Balance des comptes</string>
+    <string name="btn_createpot">Créer un pot</string>
+    <string name="btn_viewpots">Consulter mes pots</string>
+    <string name="btn_settings">Paramètres</string>
+    <string name="btn_modifprofile">Modifier mon profil</string>
+    <string name="btn_confirm">Confirmer</string>
+    <string name="btn_modify">Modifier</string>
+
+    <!--Joke strings-->
+    <string name="joke_login">Vous voulez vous connecter ? HAHAHAhaaahaah !</string>
+    <string name="joke_signin">Vous voulez vous enregistrer ? HAHAHAhaaahaah !</string>
+    <string name="joke_balance">Vous voulez consulter vos balances ? HAHAHAhaaahaah !</string>
+    <string name="joke_createpot">Vous voulez créer un pot ? HAHAHAhaaahaah !</string>
+    <string name="joke_viewpots">Vous voulez consulter vos pots ? HAHAHAhaaahaah !</string>
+    <string name="joke_modifprofile">Vous voulez modifier votre profil ? HAHAHAhaaahaah !</string>
+    <string name="joke_settings">Vous voulez changer les paramètres ? HAHAHAhaaahaah !</string>
+
+    <!--Message strings-->
+    <string name="message_processrequest">Requête en cours de traitement&#8230;</string>
+
+    <!--Toast strings-->
+    <string name="toast_nocredentials">Veuillez vérifier que vous avez saisi un pseudo et un mot de passe.</string>
+    <string name="toast_badcredentials">Erreur d\'authentification, vérifiez vos pseudo et mot de passe.</string>
+    <string name="toast_passwordsnotequal">Les deux mots de passe doivent être similaires.</string>
+    <string name="toast_passwordsempty">Vous devez entrer un mot de passe.</string>
+    <string name="toast_passwordlength">Le mot de passe doit comporter au moins 8 caractères.</string>
+    <string name="toast_successsignin">Enregistrement réussi, vous allez recevoir un mail de confirmation.</string>
+    <string name="toast_unabletoencrypt">Erreur lors de la préparation de l\'inscription, merci de réessayer plus tard.</string>
+    <string name="toast_partnameempty">Veuillez saisir un nom pour ajouter un participant.</string>
+    <string name="toast_tbfundelemnameempty">Veuillez saisir un nom pour ajouter un élément à financer.</string>
+    <string name="toast_potrequirement">Un pot commun requiert au moins un participant et un élément à financer.</string>
+    <string name="toast_nopotname">Veuillez choisir un nom pour votre pot commun.</string>
+    <string name="toast_successcreatepot">Le nouveau pot commun a bien été créé.</string>
+
+    <!--Toast strings from WS-->
+    <!--General-->
+    <string name="wsError_001">Impossible d\'accéder au service web, mauvais identifiants.</string>
+    <!--Check free data-->
+    <string name="wsError_002">Ces pseudo et email sont déjà utilisés.</string>
+    <string name="wsError_003">Ce pseudo est déjà utilisé.</string>
+    <string name="wsError_004">Cet email est déjà utilisé.</string>
+    <!--Sign in-->
+    <string name="wsError_005">Aucun utilisateur trouvé avec ces identifiants.</string>
+    <!--Create pot-->
+    <string name="wsError_006">Aucun utilisateur trouvé avec ce pseudo.</string>
+    <!--Consult pots-->
+    <string name="wsError_007">Vous ne participez à aucun pot commun.</string>
+
+    <!--Text hints-->
+    <string name="hint_lastname">Nom</string>
+    <string name="hint_firstname">Prénom</string>
+    <string name="hint_username">Pseudo</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="hint_confpwd">Confirmer mdp</string>
+    <string name="hint_hiddenpwd">****</string>
+    <string name="hint_potname">Nouveau pot</string>
+    <string name="hint_newpart">Nouveau participant</string>
+    <string name="hint_newtbfelem">Nouvel élément à financer</string>
+    <string name="hint_useramount">Montant investi</string>
+    <string name="hint_valueelem">Valeur de l\'élément</string>
+
+    <!--Global values-->
+    <string name="wsUser" translatable="false">wsAdmin</string>
+    <string name="wsPassword" translatable="false">wsPWD</string>
+    <string name="secret" translatable="false">equiermentforencazertyui</string>
+    <string name="pcommPrefsFile" translatable="false">pcommPrefsFile</string>
+    <string name="defaultelemvalue" translatable="false">0.00</string>
+</resources>

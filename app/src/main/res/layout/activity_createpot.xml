@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/SCVCreatePot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp">
+
+        <RelativeLayout
+            android:id="@+id/RLScVCreatePot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
+
+            <EditText
+                android:id="@+id/editTextPotname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="61dp"
+                android:ems="10"
+                android:hint="@string/hint_potname"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/delimiterBtn1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/editTextPotname" />
+
+            <RelativeLayout
+                android:id="@+id/RLAllPart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/delimiterBtn1">
+
+                <LinearLayout
+                    android:id="@+id/LLNewPart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextNewPart"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:ems="10"
+                        android:hint="@string/hint_newpart"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/addNewPartBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:backgroundTint="@android:color/white"
+                        android:text="+"
+                        android:textColor="?android:attr/windowBackground"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RLParti1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/LLNewPart"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/editTextPart1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:ems="10"
+                        android:hint="@string/hint_newpart"
+                        android:inputType="textPersonName"
+                        android:text="User1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/editTextPart1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editTextAmntPart1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:ems="10"
+                            android:hint="@string/hint_useramount"
+                            android:inputType="numberDecimal" />
+
+                        <Button
+                            android:id="@+id/DeleteParti1Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:text="-"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/delimiterBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/RLAllPart" />
+
+            <RelativeLayout
+                android:id="@+id/RLAllElem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/delimiterBtn2">
+
+                <LinearLayout
+                    android:id="@+id/LLNewElem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextNewElem"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:ems="10"
+                        android:hint="@string/hint_newtbfelem"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/addNewElemBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:backgroundTint="@android:color/white"
+                        android:text="+"
+                        android:textColor="?android:attr/windowBackground"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RLTFElem1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/LLNewElem"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/editTextElem1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:ems="10"
+                        android:hint="@string/hint_newtbfelem"
+                        android:inputType="textPersonName"
+                        android:text="Element1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/editTextElem1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editTextValElem1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:ems="10"
+                            android:hint="@string/hint_valueelem"
+                            android:inputType="numberDecimal" />
+
+                        <Button
+                            android:id="@+id/DeleteElem1Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:text="-"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/CreatePotBtn"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/RLAllElem"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@android:color/background_light"
+                android:text="@string/btn_createpot"
+                android:textColor="?android:attr/detailsElementBackground"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <Button
+                android:id="@+id/CancelBtn"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_alignStart="@+id/CreatePotBtn"
+                android:layout_below="@+id/CreatePotBtn"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@android:color/background_light"
+                android:text="@string/btn_cancel"
+                android:textColor="?android:attr/detailsElementBackground"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CreatePotBtn" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CancelBtn"
+                android:layout_centerHorizontal="true"
+                android:text="@string/app_name"
+                android:textColor="@android:color/background_light"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.787" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:text="@string/app_title"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

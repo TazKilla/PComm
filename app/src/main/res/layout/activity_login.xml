@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.g4.pcomm.StartingActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintVertical_bias="0.787"
+        android:layout_marginTop="81dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_title"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/LoginBtn"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@android:color/background_light"
+        android:text="@string/btn_login"
+        android:textColor="?android:attr/detailsElementBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/CancelBtn"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@android:color/background_light"
+        android:text="@string/btn_cancel"
+        android:textColor="?android:attr/detailsElementBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginBtn"
+        android:layout_below="@+id/LoginBtn"
+        android:layout_alignStart="@+id/LoginBtn" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/hint_username"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTextUsername"
+        android:layout_alignTop="@+id/editTextUsername"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword" />
+
+</RelativeLayout>
