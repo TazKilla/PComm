@@ -242,7 +242,7 @@ public class CreatePotActivity extends AppCompatActivity {
 
     private RelativeLayout createUIElement(String elemName, int elemType) {
 
-        RelativeLayout newElem = new RelativeLayout(getApplicationContext());
+        final RelativeLayout newElem = new RelativeLayout(getApplicationContext());
         newElem.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
         EditText newElemName = new EditText(getApplicationContext());
         newElemName.setId(View.generateViewId());
@@ -266,6 +266,13 @@ public class CreatePotActivity extends AppCompatActivity {
         }
         newElemAmount.setLayoutParams(new TableLayout.LayoutParams(0, TableLayout.LayoutParams.MATCH_PARENT, 1f));
         deleteNewElem.setLayoutParams(new TableLayout.LayoutParams(0, TableLayout.LayoutParams.MATCH_PARENT, 4f));
+
+        deleteNewElem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainPartLayout.removeView(newElem);
+            }
+        });
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 

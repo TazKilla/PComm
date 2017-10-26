@@ -25,6 +25,8 @@ import javax.crypto.SecretKey;
 
 /**
  * Created by groche on 7/26/2017.
+ *
+ * Displays modify profile view, and handles profile data changes.
  */
 
 public class ModifyProfileActivity extends AppCompatActivity {
