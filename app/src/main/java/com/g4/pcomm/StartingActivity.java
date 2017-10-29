@@ -8,6 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by Talkamynn on 23/10/2017.
+ *
+ * Displays Login and Signin buttons
+ */
+
 public class StartingActivity extends AppCompatActivity {
 
     Button LoginBtn;

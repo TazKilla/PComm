@@ -219,6 +219,11 @@ public class SigninActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * If user name and email are free on database,
+     * calls web service to proceed signin operation,
+     * by sending user information.
+     */
     private void signIn() {
         // Web service method to call
         method = "SignIn";

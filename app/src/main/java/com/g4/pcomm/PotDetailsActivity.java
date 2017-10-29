@@ -26,6 +26,8 @@ import java.util.Map;
 
 /**
  * Created by Talkamynn on 19/10/2017.
+ *
+ * Displays pot details from pot ID
  */
 
 public class PotDetailsActivity extends AppCompatActivity {

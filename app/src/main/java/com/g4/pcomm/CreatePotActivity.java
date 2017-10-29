@@ -240,6 +240,15 @@ public class CreatePotActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * When user want to add participant or element to be fund,
+     * the activity send data and get back new element to display
+     *
+     * @param elemName String The element name, to display on the new element
+     * @param elemType int The element type, to know which array to update
+     *
+     * @return RelativeLayout The new element to display
+     */
     private RelativeLayout createUIElement(String elemName, int elemType) {
 
         final RelativeLayout newElem = new RelativeLayout(getApplicationContext());

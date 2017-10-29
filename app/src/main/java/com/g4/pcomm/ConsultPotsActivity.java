@@ -108,6 +108,11 @@ public class ConsultPotsActivity extends AppCompatActivity {
         getPots(userId);
     }
 
+    /**
+     * Get pot list from user ID on database
+     *
+     * @param userId String The user ID to send to web service
+     */
     private void getPots(String userId) {
         method = "GetPotsFromUserId";
 
@@ -121,6 +126,11 @@ public class ConsultPotsActivity extends AppCompatActivity {
         pCommRPC.execute(method, data);
     }
 
+    /**
+     * Create pot list view from data received from web service
+     *
+     * @param data HashMap Pot data to handle
+     */
     private void createPotsLink(HashMap<String, HashMap<String, String>> data) {
 
         int potsNum = data.size();
