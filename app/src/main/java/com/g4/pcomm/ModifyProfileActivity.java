@@ -31,7 +31,7 @@ import javax.crypto.SecretKey;
 
 public class ModifyProfileActivity extends AppCompatActivity {
 
-    static final String LOG = "PComm - Main";
+    static final String LOG = "PComm - ModifyProfile";
 
     private PCommRPC pCommRPC = null;
     private Tools toolBox = new Tools();
@@ -61,6 +61,7 @@ public class ModifyProfileActivity extends AppCompatActivity {
     String newRePassword;
 
     String method;
+    String encryptedEmail;
 
     BroadcastReceiver freeDataReceiver;
     BroadcastReceiver modifyProfileReceiver;
@@ -122,7 +123,11 @@ public class ModifyProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                method = "ModifyProfile";
+                // Encrypt user email address for security/privacy
+                SecretKey secret;
+                byte[] array;
+
+                method = "UpdateProfile";
 
                 newFirstName = ETFirstName.getText().toString();
                 newLastName = ETLastName.getText().toString();
@@ -131,73 +136,88 @@ public class ModifyProfileActivity extends AppCompatActivity {
                 newPassword = ETPassword.getText().toString();
                 newRePassword = ETRePassword.getText().toString();
 
-                if (!newPassword.equals(password)) {
-                    if (newPassword.equals("") || newRePassword.equals("")) { // Check if password and repassword exist
-                        Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordsempty), Toast.LENGTH_SHORT).show();
-                    } else if (!newPassword.equals(newRePassword)) { // Check if password and repassword are equal
-                        Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordsnotequal), Toast.LENGTH_SHORT).show();
-                    } else if (password.length() < 8) { // Check if password is larger than 7 chars
-                        Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordlength), Toast.LENGTH_SHORT).show();
-                    } else { // Check if selected user name and email are available
-                        method = "CheckFreeData";
-                        SecretKey secret;
-                        byte[] array;
-                        String encryptedEmail;
+                try {
+//                if (!newPassword.equals(password)) {
+                    if (!newPassword.equals("") || !newRePassword.equals("")) { // Check if password and repassword have been changed
 
-                        HashMap<String, String> data = new HashMap<>();
-                        data.put("user", getString(R.string.wsUser));
-                        data.put("password", getString(R.string.wsPassword));
-                        if (!newUserName.equals(userName)) {
-                            data.put("user_name", newUserName);
-                        }
-                        if (!newEmail.equals(email)) {
-                            try {
-                                secret = toolBox.generateKey(getString(R.string.secret));
-                                array = toolBox.encryptMsg(newEmail, secret);
-                                encryptedEmail = Base64.encode(array);
-                                data.put("email_address", encryptedEmail);
+                        if (!newPassword.equals(newRePassword)) { // Check if password and repassword are equal
+                            Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordsnotequal), Toast.LENGTH_SHORT).show();
+                        } else if (password.length() < 8) { // Check if password is larger than 7 chars
+                            Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordlength), Toast.LENGTH_SHORT).show();
+                        } else { // Check if selected user name and email are available
+                            method = "CheckFreeData";
 
-                            } catch (Exception e) {
-                                Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordlength), Toast.LENGTH_LONG).show();
-                                Log.d(LOG, "Error during data encryption: " + e);
+                            HashMap<String, String> data = new HashMap<>();
+                            data.put("user", getString(R.string.wsUser));
+                            data.put("password", getString(R.string.wsPassword));
+                            if (!newUserName.equals(userName)) {
+                                data.put("user_name", newUserName);
                             }
+                            if (!newEmail.equals(email)) {
+                                try {
+                                    secret = toolBox.generateKey(getString(R.string.secret));
+                                    array = toolBox.encryptMsg(newEmail, secret);
+                                    encryptedEmail = Base64.encode(array);
+                                    data.put("email_address", encryptedEmail);
+
+                                } catch (Exception e) {
+                                    Toast.makeText(getApplicationContext(), getString(R.string.toast_passwordlength), Toast.LENGTH_LONG).show();
+                                    Log.d(LOG, "Error during data encryption: " + e);
+                                }
+                            }
+                            Log.i(LOG, data.values().toString());
+
+                            pCommRPC = new PCommRPC(ModifyProfileActivity.this);
+                            pCommRPC.execute(method, data);
                         }
-                        Log.i(LOG, data.values().toString());
-
-                        pCommRPC = new PCommRPC(ModifyProfileActivity.this);
-                        pCommRPC.execute(method, data);
                     }
-                }
 
-                Map<String, String> data = new HashMap<>();
-                data.put("user", getString(R.string.wsUser));
-                data.put("password", getString(R.string.wsPassword));
-                if (!newFirstName.equals(firstName)) {
-                    data.put("first_name", newUserName);
-                }
-                if (!newLastName.equals(lastName)) {
-                    data.put("last_name", newLastName);
-                }
-                if (!newUserName.equals(userName)) {
-                    data.put("user_name", newUserName);
-                }
-                if (!newEmail.equals(email)) {
-                    data.put("email_address", newEmail);
-                }
-                if (!newPassword.equals(password)) {
-                    data.put("user_password", newPassword);
-                }
-                Log.i(LOG, data.values().toString());
+                    Map<String, String> data = new HashMap<>();
+                    data.put("user", getString(R.string.wsUser));
+                    data.put("user_id", userId);
+                    data.put("password", getString(R.string.wsPassword));
+                    if (!newFirstName.equals(firstName)) {
+                        data.put("first_name", newUserName);
+                    }
+                    if (!newLastName.equals(lastName)) {
+                        data.put("last_name", newLastName);
+                    }
+                    if (!newUserName.equals(userName)) {
+                        data.put("user_name", newUserName);
+                    }
+                    if (!newEmail.equals(email)) {
+                        secret = toolBox.generateKey(getString(R.string.secret));
+                        array = toolBox.encryptMsg(newEmail, secret);
+                        encryptedEmail = Base64.encode(array);
+                        data.put("email_address", encryptedEmail);
+                    }
+                    if (!newPassword.equals(password)) {
+                        data.put("user_password", newPassword);
+                    }
+                    Log.i(LOG, "Params: " + data);
 
-                pCommRPC = new PCommRPC(ModifyProfileActivity.this);
-                pCommRPC.execute(method, data);
+                    pCommRPC = new PCommRPC(ModifyProfileActivity.this);
+                    pCommRPC.execute(method, data);
 
-//                Intent loginIntent;
-//                loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
-//                startActivity(loginIntent);
-//                finish();
+                    Intent loginIntent;
+                    loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(loginIntent);
+                    finish();
 
-                Toast.makeText(getApplicationContext(), getString(R.string.joke_modifprofile), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getString(R.string.toast_successmodifprofile),
+                            Toast.LENGTH_SHORT
+                    ).show();
+
+                } catch (Exception e) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getString(R.string.toast_passwordlength),
+                            Toast.LENGTH_LONG
+                    ).show();
+                    Log.d(LOG, "Error during data encryption: " + e);
+                }
             }
         });
 

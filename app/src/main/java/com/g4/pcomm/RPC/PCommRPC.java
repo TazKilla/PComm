@@ -85,7 +85,8 @@ public class PCommRPC extends AsyncTask<Object, Integer, Boolean> {
         // Remote procedure call via HTTP (heavy process)
         try {
             Log.d(LOG, "Client creation...");
-            XMLRPCClient client = new XMLRPCClient(new URL("http://64.137.240.47/webservices/pcws_server.php"), XMLRPCClient.FLAGS_FORWARD);
+//            XMLRPCClient client = new XMLRPCClient(new URL("http://64.137.240.47/webservices/pcws_server.php"), XMLRPCClient.FLAGS_FORWARD);
+            XMLRPCClient client = new XMLRPCClient(new URL("http://10.0.2.2/PComm_API/pcws_server.php"), XMLRPCClient.FLAGS_FORWARD);
             Log.d(LOG, "Client created.");
 
             Log.d(LOG, "Start to call WS...");

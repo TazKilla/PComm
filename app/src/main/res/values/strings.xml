@@ -41,6 +41,8 @@
     <string name="toast_potrequirement">Un pot commun requiert au moins un participant et un élément à financer.</string>
     <string name="toast_nopotname">Veuillez choisir un nom pour votre pot commun.</string>
     <string name="toast_successcreatepot">Le nouveau pot commun a bien été créé.</string>
+    <string name="toast_successmodifprofile">Profil mis à jour, merci de vous reconnecter.</string>
+    <string name="toast_encryptionerror">Erreur durant la phase d\'encryption du message.</string>
 
     <!--Toast strings from WS-->
     <!--General-->

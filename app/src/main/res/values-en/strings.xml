@@ -32,7 +32,7 @@
     <string name="toast_passwordlength">Password must have at least 8 characters.</string>
     <string name="toast_passwordsempty">You have to select a password.</string>
     <string name="btn_viewpots">Check my pots</string>
-    <string name="joke_viewpots">You wanna check your pots ? HAHAHAhaaahaah !</string>
+    <string name="joke_viewpots">You wanna check your wallets ? HAHAHAhaaahaah !</string>
     <string name="wsError_005">No user found with those credentials.</string>
     <string name="hint_newtbfelem">New element to fund</string>
     <string name="hint_potname">New pot</string>
@@ -45,8 +45,11 @@
     <string name="message_processrequest">Processing request&#8230;</string>
     <string name="wsError_006">No user found with this username.</string>
     <string name="toast_potrequirement">User name already used.</string>
-    <string name="toast_nopotname">Please select a name for your common pot.</string>
-    <string name="wsError_007">You do not participate to any common pot.</string>
+    <string name="toast_nopotname">Please select a name for your shared wallet.</string>
+    <string name="wsError_007">You do not participate to any shared wallet.</string>
     <string name="btn_modify">Modify</string>
     <string name="hint_hiddenpwd">****</string>
+    <string name="toast_successcreatepot">New wallet have been successfully created.</string>
+    <string name="toast_successmodifprofile">Profile updated, please log in again.</string>
+    <string name="toast_encryptionerror">Fail to encrypt the message.</string>
 </resources>
